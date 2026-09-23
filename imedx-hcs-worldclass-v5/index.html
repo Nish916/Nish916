@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HIM Companion Suite | iMedX Australia & New Zealand</title>
+<meta name="description" content="iMedX HIM Companion Suite — AI-Assisted Clinical Coding Solutions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#06334a;--navy2:#08283a;--teal:#5cb9b2;--blue:#365e9d;
+  --orange:#fc672c;--ink:#193441;--muted:#617780;--line:#dce7e9;
+  --mist:#f4f9fa;--white:#fff;--shadow:0 24px 60px rgba(6,51,74,.12)
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Source Sans 3","Source Sans Pro",Arial,sans-serif;color:var(--ink);line-height:1.5;background:#fff}a{text-decoration:none;color:inherit}img{display:block;max-width:100%}button{font:inherit}.wrap{width:min(1220px,calc(100% - 44px));margin:auto}
+.top{background:var(--navy2);color:#dce8eb;font-size:12px}.top .wrap{height:32px;display:flex;align-items:center;justify-content:space-between}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:28px}.logo{width:188px}.navlinks{display:flex;align-items:center;gap:26px;font-size:14px;font-weight:700;color:#4e6671}.cta-btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:4px;background:var(--orange);color:#fff;font-weight:800}
+.subnav{background:#fff;border-bottom:1px solid var(--line)}.subnav .wrap{height:46px;display:flex;align-items:center;gap:25px;overflow:auto;white-space:nowrap;font-size:13px;font-weight:700;color:#617781}
+.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:800}
+.hero{padding:64px 0 54px;background:linear-gradient(180deg,#f8fcfc 0,#fff 100%)}.hero-grid{display:grid;grid-template-columns:.86fr 1.14fr;gap:54px;align-items:center}.hero h1{font-size:58px;line-height:1.01;letter-spacing:-.045em;color:var(--navy);margin:10px 0 18px}.hero h2{font-size:23px;line-height:1.38;color:#425c67;font-weight:500;margin:0}.hero p{font-size:17px;color:#58707a}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.secondary{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:4px;border:1px solid #b9cbd0;background:#fff;color:var(--navy);font-weight:800}
+.hero-proof{display:flex;gap:28px;flex-wrap:wrap;margin-top:32px;padding-top:22px;border-top:1px solid var(--line)}.proof-item{font-weight:700;color:#49636e}.proof-item b{color:var(--teal);margin-right:7px}
+.app-shell{position:relative;background:#fff;border:1px solid #cbdadd;padding:12px;box-shadow:var(--shadow)}.browser{height:34px;display:flex;align-items:center;gap:6px;border-bottom:1px solid #e5edef;color:#82949b;font-size:11px;padding:0 8px}.dot{width:8px;height:8px;border-radius:50%;background:#d2dcdf}.app-shell img{width:100%;height:560px;object-fit:contain;background:#f8fafb}.callout{position:absolute;background:#fff;border:1px solid var(--line);box-shadow:0 12px 30px rgba(6,51,74,.12);padding:12px 14px;width:205px;font-size:12px}.callout strong{display:block;color:var(--navy);font-size:13px}.c1{top:-16px;left:70px}.c2{top:-16px;left:285px}.c3{top:-16px;right:40px}.pin{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px}.red{background:#ef4b45}.blue{background:#2d85d0}.green{background:#19a981}
+.section{padding:82px 0}.mist{background:var(--mist)}h2{font-size:42px;line-height:1.08;letter-spacing:-.03em;color:var(--navy);margin:7px 0 15px}.lead{font-size:20px;color:#556e78;max-width:860px}
+.modules-title{text-align:center;max-width:850px;margin:auto}.module-line{margin-top:42px;display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}.module-line:before{content:"";position:absolute;left:9%;right:9%;top:36px;height:2px;background:#bddfe2}.module-node{position:relative;text-align:center;padding:0 12px}.module-icon{margin:auto;width:72px;height:72px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:26px;font-weight:800;position:relative;z-index:2;background:var(--navy)}.module-node:nth-child(2) .module-icon{background:#0ca7a8}.module-node:nth-child(3) .module-icon{background:#2a7dd1}.module-node:nth-child(4) .module-icon{background:#634ca5}.module-node:nth-child(5) .module-icon{background:#1aa16f}.module-node h3{margin:13px 0 4px;color:var(--navy);font-size:18px}.module-node p{font-size:14px;color:#607680;margin:0}
+.dark{background:linear-gradient(180deg,#082a3e 0,#061f2d 100%);color:#fff}.dark h2{color:#fff}.dark .lead{color:#cbd9dd}.showcase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}.showcase-card{border:1px solid rgba(255,255,255,.15);background:#fff;color:var(--ink);padding:10px}.showcase-card img{width:100%;height:285px;object-fit:cover;object-position:top;background:#f7fafb}.showcase-copy{padding:15px 12px 10px}.showcase-copy h3{margin:0 0 5px;color:var(--navy);font-size:20px}.showcase-copy p{margin:0;color:#5f747d;font-size:14px}
+.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:28px}.card{border:1px solid var(--line);background:#fff;padding:10px 10px 16px}.card img{width:100%;height:138px;object-fit:cover;object-position:top;background:#f8fafb}.card h3{color:var(--navy);font-size:18px;margin:12px 0 5px}.card p{font-size:14px;color:#607680;margin:0 0 6px}.card .tag{font-weight:700;color:#3f5b66}
+.why-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:54px}.principles{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line);margin-top:26px}.principle{padding:22px 16px;border-right:1px solid var(--line)}.principle:last-child{border-right:0}.principle strong{display:block;color:var(--navy);margin-bottom:6px}.principle p{margin:0;color:#617781;font-size:14px}
+.roles{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}.role{border:1px solid var(--line);background:#fff;padding:26px}.role h3{color:var(--navy);font-size:22px;margin:8px 0 10px}.role p{margin:0;color:#5c727c}
+.integration{display:grid;grid-template-columns:1fr auto 1.25fr auto 1fr;gap:10px;align-items:center;margin-top:28px}.integration .box{border:1px solid var(--line);background:#fff;padding:18px;text-align:center;color:var(--navy);font-weight:800}.integration .core{background:var(--navy);color:#fff}.arrow{font-size:24px;color:var(--teal)}
+.resources{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:28px}.resource{border:1px solid var(--line);background:#fff;padding:20px}.resource small{display:block;text-transform:uppercase;letter-spacing:.11em;font-weight:800;color:#748790;font-size:11px}.resource h3{font-size:18px;line-height:1.2;color:var(--navy);margin:10px 0}.resource p{color:#607680;font-size:14px}.resource a{font-weight:800;color:var(--navy)}
+.closing{background:linear-gradient(90deg,#07324b 0,#0b4a69 58%,#0d5b73 100%);color:#fff;padding:62px 0}.closing h2{color:#fff}.closing .lead{color:#d8e5e8}.footer{background:#05283a;color:#cadadd;padding:26px 0;font-size:13px}.footer-row{display:flex;align-items:center;justify-content:space-between;gap:24px}.footer img{width:145px;filter:brightness(0) invert(1);opacity:.95}
+@media(max-width:1000px){.navlinks a:not(.cta-btn){display:none}.hero-grid,.why-grid{grid-template-columns:1fr}.app-shell img{height:500px}.callout{display:none}.showcase-grid,.roles{grid-template-columns:1fr 1fr}.cards,.resources{grid-template-columns:1fr 1fr}.module-line{grid-template-columns:repeat(2,1fr);gap:24px}.module-line:before{display:none}.principles{grid-template-columns:1fr 1fr}.integration{grid-template-columns:1fr}.arrow{transform:rotate(90deg);text-align:center}}
+@media(max-width:640px){.wrap{width:min(100% - 28px,1220px)}.hero h1{font-size:42px}.hero h2{font-size:20px}.section{padding:62px 0}h2{font-size:34px}.app-shell img{height:auto}.module-line,.showcase-grid,.cards,.principles,.roles,.resources{grid-template-columns:1fr}.top span:last-child{display:none}.footer-row{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap"><span>iMedX Australia &amp; New Zealand</span><span>HIM Companion Suite</span></div></div>
+<header>
+  <div class="wrap nav">
+    <a href="#top"><img class="logo" src="https://imedx.com.au/wp-content/uploads/cropped-Logo_iMedX-Colour-Branded_200x100_v6-RGB.webp" alt="iMedX Rapid Care Group"></a>
+    <nav class="navlinks">
+      <a href="#modules">Modules</a>
+      <a href="#why">Why HCS</a>
+      <a href="#roles">Who it helps</a>
+      <a href="#resources">Resources</a>
+      <a class="cta-btn" href="https://imedx.com.au/products/companion-suite/" target="_blank">Book a Demo</a>
+    </nav>
+  </div>
+</header>
+<div class="subnav"><div class="wrap"><a href="#overview">Overview</a><a href="#modules">Modules</a><a href="#product">HCS in action</a><a href="#why">Why HCS</a><a href="#roles">User Benefits</a><a href="#integration">Integration</a><a href="#resources">Resources</a></div></div>
+
+<main id="top">
+<section class="hero" id="overview">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">HIM Companion Suite</div>
+      <h1>AI-Assisted Clinical Coding Solutions – Smarter Coding Starts Here</h1>
+      <h2>Enhance your Health Information Management with the HIM Companion Suite – a powerful ecosystem of modular AI and human-enhanced tools designed to optimise clinical coding, auditing, and documentation accuracy.</h2>
+      <p><strong>HIM Companion Suite hones daily tasks, fosters professional growth, and enhances clinical coding outcomes.</strong></p>
+      <p>Tailored to meet the unique needs of Health Information Services (HIS) departments, HIM Companion Suite empowers HIS teams with an ecosystem of modular, AI-enabled tools designed by industry experts. It optimises coding, ensures quality assurance, simplifies reporting, and advances coding education.</p>
+      <div class="actions">
+        <a class="cta-btn" href="https://imedx.com.au/products/companion-suite/" target="_blank">Book a Demo</a>
+        <a class="secondary" href="https://imedx.com.au/resource-hub/" target="_blank">Download the brochure</a>
+      </div>
+      <div class="hero-proof">
+        <div class="proof-item"><b>✓</b>Faster time to accurate cash</div>
+        <div class="proof-item"><b>✓</b>Smarter coders, stronger teams</div>
+        <div class="proof-item"><b>✓</b>Every case optimised, not just audited</div>
+      </div>
+    </div>
+    <div class="app-shell">
+      <div class="browser"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span style="margin-left:8px">HIM Companion Suite · Code Workflow</span></div>
+      <img src="https://i0.wp.com/imedx.com.au/wp-content/uploads/HIM-Companion-Suite-User-Screen_Code-Workflow_v1-RGB_web.jpg?fit=1600%2C1066&ssl=1" alt="HIM Companion Suite Code Workflow application screen">
+      <div class="callout c1"><span class="pin red"></span><strong>Priority-based queueing</strong>Automated case allocation and priority-based queueing.</div>
+      <div class="callout c2"><span class="pin blue"></span><strong>Task visibility</strong>Audit and query management with full task visibility.</div>
+      <div class="callout c3"><span class="pin green"></span><strong>Performance dashboards</strong>Track productivity, time-to-code, coding volume and revenue.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section mist" id="modules">
+  <div class="wrap">
+    <div class="modules-title">
+      <div class="eyebrow">The iMedX HIM Companion Suite Modules</div>
+      <h2>A modular Clinical Coding and Revenue Cycle Management companion toolset.</h2>
+      <p class="lead">The iMedX HIM Companion Suite is built from the ground up as a Clinical Coding and Revenue Cycle Management companion toolset.</p>
+    </div>
+    <div class="module-line">
+      <div class="module-node"><div class="module-icon">⌘</div><h3>Code Workflow</h3><p>Manage. Prioritise. Perform.</p></div>
+      <div class="module-node"><div class="module-icon">⌕</div><h3>Code Enhance</h3><p>Your smart second set of eyes.</p></div>
+      <div class="module-node"><div class="module-icon">▤</div><h3>Code Assist</h3><p>A powerful alternative to traditional code finders.</p></div>
+      <div class="module-node"><div class="module-icon">ϟ</div><h3>Code Accelerate</h3><p>AI that understands your documentation.</p></div>
+      <div class="module-node"><div class="module-icon">◌</div><h3>Coding Assistant (Codie)</h3><p>Your companion for your coding workday.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" id="product">
+  <div class="wrap">
+    <div class="eyebrow">HCS in action</div>
+    <h2>See the HIM Companion Suite in the workflow.</h2>
+    <p class="lead">Built to support Coders, Designed to Impact providers.</p>
+    <div class="showcase-grid">
+      <article class="showcase-card">
+        <img src="https://i0.wp.com/imedx.com.au/wp-content/uploads/HIM-Companion-Suite-User-Screen_Code-Workflow_v1-RGB_web.jpg?fit=1100%2C733&ssl=1" alt="HCS Code Workflow">
+        <div class="showcase-copy"><h3>Code Workflow</h3><p>Sophisticated coding workflow orchestration with automated case allocation, priority-based queueing and progress tracking.</p></div>
+      </article>
+      <article class="showcase-card">
+        <img src="https://i0.wp.com/imedx.com.au/wp-content/uploads/HIM-Companion-Suite-User-Screen_code-workflow_2.jpg.png?fit=1000%2C1000&ssl=1" alt="HCS workflow application">
+        <div class="showcase-copy"><h3>One connected workflow</h3><p>Centralised platform to manage HIM workloads, coding and audit tasks with full task visibility.</p></div>
+      </article>
+      <article class="showcase-card">
+        <img src="https://i0.wp.com/imedx.com.au/wp-content/uploads/HIM-Companion-Suite-User-Screen_code-workflow-chat_4-imedx.webp?fit=1100%2C733&ssl=1" alt="Codie within HCS">
+        <div class="showcase-copy"><h3>Coding Assistant (Codie)</h3><p>Real-time guidance, coding clarification and decision support to enhance the coding process.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="eyebrow">Explore the modules</div>
+    <h2>Five connected HCS capabilities.</h2>
+    <div class="cards">
+      <article class="card">
+        <img src="https://i0.wp.com/imedx.com.au/wp-content/uploads/1_code-workflow-hcs-modules_1-imedx-clinical-coding-revenue-enhancement.png?fit=900%2C300&ssl=1" alt="Code Workflow">
+        <h3>Code Workflow</h3><p>Sophisticated coding workflow orchestration.</p><p class="tag">Manage. Prioritise. Perform.</p>
+      </article>
+      <article class="card">
+        <img src="https://i0.wp.com/imedx.com.au/wp-content/uploads/2_code-enhance-hcs-modules_1-imedx-clinical-coding-revenue-enhancement.png?fit=900%2C300&ssl=1" alt="Code Enhance">
+        <h3>Code Enhance</h3><p>Live coding advice, auditing and DRG optimisation.</p><p class="tag">Your smart second set of eyes.</p>
+      </article>
+      <article class="card">
+        <img src="https://i0.wp.com/imedx.com.au/wp-content/uploads/3_code-assist-hcs-modules_1-imedx-clinical-coding-revenue-enhancement.png?fit=900%2C300&ssl=1" alt="Code Assist">
+        <h3>Code Assist</h3><p>A powerful alternative to traditional code finders.</p>
+      </article>
+      <article class="card">
+        <img src="https://i0.wp.com/imedx.com.au/wp-content/uploads/4_code-accelerate-hcs-modules_1-imedx-clinical-coding-revenue-enhancement.png?fit=900%2C300&ssl=1" alt="Code Accelerate">
+        <h3>Code Accelerate</h3><p>AI-assisted coding.</p><p class="tag">AI that understands your documentation.</p>
+      </article>
+      <article class="card">
+        <img src="https://i0.wp.com/imedx.com.au/wp-content/uploads/5_codie-ai-companion-for-clinical-coding-hcs-modules_1-imedx-clinical-coding-revenue-enhancement.png?fit=900%2C300&ssl=1" alt="Coding Assistant Codie">
+        <h3>Coding Assistant (Codie)</h3><p>AI-enabled coding assistant.</p><p class="tag">Codie isn’t just AI. He’s your companion for your coding workday!</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section mist" id="why">
+  <div class="wrap">
+    <div class="eyebrow">Why HIM Companion Suite?</div>
+    <h2>Ensure every episode reviewed. Support and empowerment for every Coder.</h2>
+    <p class="lead">The HIM Companion Suite is purpose-built to transform how hospitals manage health information.</p>
+    <div class="principles">
+      <div class="principle"><strong>AI + Human Insight</strong><p>Augments coders with intelligent assistance—delivering suggestions, explanations, and DRG guidance on the spot.</p></div>
+      <div class="principle"><strong>Every Episode, Checked</strong><p>No discharge goes unaudited. Our tools surface issues and optimisation opportunities in real-time for Coders.</p></div>
+      <div class="principle"><strong>Continuous Education</strong><p>Coders receive live feedback and AI-curated learning to build confidence, independence, and performance.</p></div>
+      <div class="principle"><strong>Data-Driven Decisions</strong><p>Powerful dashboards and pattern recognition give HIM leaders clarity on coder education areas, optimisation opportunities, and workday priorities.</p></div>
+      <div class="principle"><strong>Integrated, Not Isolated</strong><p>Works with Cerner, Epic and all DMRs, as well as all leading PAS systems to fit into your existing clinical workflow—without needing massive IT resources.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="roles">
+  <div class="wrap">
+    <div class="eyebrow">HCS User Benefits</div>
+    <h2>Built around the needs of modern Health Information Services teams.</h2>
+    <div class="roles">
+      <article class="role"><div class="eyebrow">For the CFO</div><h3>Real-time visibility into revenue cycle performance</h3><p>Empower your finance strategy with real-time visibility into revenue cycle performance. HIM Companion Suite drives down claim denials, uncovers hidden reimbursement opportunities and automates audit‐proof compliance—so you can accelerate cash flow, tighten margins, and deliver measurable ROI within months.</p></article>
+      <article class="role"><div class="eyebrow">For the Health Information Manager</div><h3>Centralise and simplify your entire HIM operation</h3><p>From seamless EMR integration and rule-based quality checks to on-demand reporting, you’ll ensure coding accuracy, reduce backlogs and stay ahead of ever-evolving regulatory requirements—all without stitching together multiple point solutions.</p></article>
+      <article class="role"><div class="eyebrow">For the Coder</div><h3>Work faster, smarter and with greater confidence</h3><p>Our AI-guided coding assistant spotlights applicable codes, flags complex cases, and learns from your feedback—boosting productivity by up to 30% while reducing rework. Spend less time hunting references and more time on high-value, clinical documentation.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section mist" id="integration">
+  <div class="wrap">
+    <div class="eyebrow">Integrated, Not Isolated</div>
+    <h2>Fit into your existing clinical workflow.</h2>
+    <p class="lead">Works with Cerner, Epic and all DMRs, as well as all leading PAS systems to fit into your existing clinical workflow—without needing massive IT resources.</p>
+    <div class="integration">
+      <div class="box">Cerner / Epic / DMRs / PAS</div>
+      <div class="arrow">→</div>
+      <div class="box core">HIM Companion Suite</div>
+      <div class="arrow">→</div>
+      <div class="box">Coding / Audit / Reporting</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="resources">
+  <div class="wrap">
+    <div class="eyebrow">Resources</div>
+    <h2>Existing iMedX HCS resources.</h2>
+    <div class="resources">
+      <article class="resource"><small>Brochure</small><h3>HIM Companion Suite (HCS)</h3><p>Version v7.00 · Last Updated 15/05/2026</p><a href="https://imedx.com.au/resource-hub/" target="_blank">View resource →</a></article>
+      <article class="resource"><small>Governance</small><h3>Executive Priorities for Computer-Assisted Clinical Coding Solutions</h3><p>Governance Before Algorithms</p><a href="https://imedx.com.au/news/computer-assisted-clinical-coding-governance-australia/" target="_blank">Read article →</a></article>
+      <article class="resource"><small>Readiness</small><h3>Computer-Assisted Coding Readiness for Australian Hospitals</h3><p>From Data to Decisions</p><a href="https://imedx.com.au/news/computer-assisted-coding-readiness-australia/" target="_blank">Read article →</a></article>
+      <article class="resource"><small>Implementation</small><h3>Computer-Assisted Clinical Coding: Lessons Learned</h3><p>Lessons Learned from Early Adoption in Australian Healthcare.</p><a href="https://imedx.com.au/news/computer-assisted-coding-lessons-learned-australian-healthcare/" target="_blank">Read article →</a></article>
+      <article class="resource"><small>Revenue</small><h3>AI-Powered Revenue Cycle Management</h3><p>How Automation Drives Faster Payments</p><a href="https://imedx.com.au/news/ai-powered-revenue-cycle-management-clinical-coding-solutions/" target="_blank">Read article →</a></article>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap">
+    <div class="eyebrow" style="color:#8bd2cc">AI-Assisted Clinical Coding Solutions</div>
+    <h2>Empower your Health Information Services team with HIM Companion Suite.</h2>
+    <p class="lead">HIM Companion Suite helps Health Information Services teams overcome today’s operational challenges with a suite of intelligent, modular tools built around the needs of modern healthcare organisations. Combining AI innovation with deep HIM expertise, it enables more efficient coding, improved data quality, streamlined reporting, and continuous skills development.</p>
+    <div class="actions"><a class="cta-btn" href="https://imedx.com.au/products/companion-suite/" target="_blank">Book Your Demo</a><a class="secondary" href="https://imedx.com.au/resource-hub/" target="_blank">Download the brochure</a></div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-row">
+    <img src="https://imedx.com.au/wp-content/uploads/cropped-Logo_iMedX-Colour-Branded_200x100_v6-RGB.webp" alt="iMedX">
+    <span>iMedX Australia &amp; New Zealand</span>
+    <span>HIM Companion Suite</span>
+  </div>
+</footer>
+</body>
+</html>
