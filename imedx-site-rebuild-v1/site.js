@@ -101,6 +101,14 @@
       push("resource_click", { resource_title: text || "Resource Hub", source_component: location });
     }
 
+    if (/hcs-v2\.html/i.test(href)) {
+      push("hcs_v2_campaign_click", { cta_text: text, source_component: location });
+    }
+
+    if (/validate hcs|casemix|validation blueprint/i.test(text)) {
+      push("casemix_validation_click", { cta_text: text, cta_location: location, destination: href });
+    }
+
     if (/\.(pdf|docx?|xlsx?|pptx?)(\?|$)/i.test(href)) {
       push("file_download", { file_name: href.split("/").pop()?.split("?")[0] || "", link_text: text });
     }
