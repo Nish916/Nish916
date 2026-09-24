@@ -132,20 +132,16 @@
     } catch (_) {}
   });
 
-  const roleSelect = document.getElementById("hcs-role-select");
-  const roleGo = document.getElementById("hcs-role-go");
-  if (roleSelect && roleGo) {
-    roleGo.addEventListener("click", () => {
-      const destination = roleSelect.value;
-      if (!destination) {
-        roleSelect.focus();
-        return;
-      }
-      const label = roleSelect.options[roleSelect.selectedIndex]?.text || "";
-      push("persona_select", { persona_name: label, source_component: "hcs_role_dropdown", link_text: "View landing page" });
-      window.location.href = destination;
+  document.querySelectorAll(".role-pill").forEach((pill) => {
+    pill.addEventListener("click", () => {
+      const label = pill.querySelector(".role-pill-title")?.textContent?.trim() || "";
+      push("persona_select", {
+        persona_name: label,
+        source_component: "hcs_role_cards",
+        link_text: label
+      });
     });
-  }
+  });
 
   const thresholds = [50, 75, 90];
   const sent = new Set();
