@@ -28,7 +28,19 @@
 .stage small{display:block;color:var(--teal);font-weight:800;letter-spacing:.1em;text-transform:uppercase}.stage strong{display:block;color:var(--navy);font-size:19px;margin:6px 0}.stage p{font-size:13px;color:#607680;margin:0}
 .boundary{margin-top:30px;padding:20px 22px;border:1px solid #f2c9b9;background:#fff8f4;border-radius:10px;color:#7a4a36}
 @media(max-width:980px){.v2-grid,.proof-section{grid-template-columns:1fr}.core-line,.maturity{grid-template-columns:1fr 1fr}.v2-grid img{height:auto}}
-@media(max-width:640px){.core-line,.maturity{grid-template-columns:1fr}.core-item{border-right:0;border-bottom:1px solid var(--line)}.proof-copy h2{font-size:34px}}
+.problem-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:52px;align-items:start}
+.problem-points{display:grid;gap:12px}
+.problem-point{padding:18px 20px;border-left:3px solid var(--teal);background:#fff;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line);border-radius:0 10px 10px 0}
+.problem-point strong{display:block;color:var(--navy);margin-bottom:5px}.problem-point span{font-size:14px;color:#607680}
+.assurance-loop{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:920px;margin:34px auto 0;padding:46px 0}
+.loop-step{position:relative;z-index:2;min-height:150px;padding:22px;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:0 12px 30px rgba(6,51,74,.06)}
+.loop-step strong{display:block;color:var(--navy);font-size:18px;margin-bottom:7px}.loop-step span{font-size:13px;color:#607680;line-height:1.55}
+.loop-centre{position:absolute;z-index:3;left:50%;top:50%;transform:translate(-50%,-50%);width:156px;height:156px;border-radius:50%;display:grid;place-items:center;text-align:center;padding:20px;background:var(--navy);color:#fff;font-weight:800;box-shadow:0 18px 38px rgba(6,51,74,.18);border:8px solid #eef7f6}
+.loop-centre small{display:block;color:#9edbd6;font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px}
+.baseline-note{margin-top:18px;padding:16px 18px;border:1px solid #d9e7e8;background:#fbfdfd;border-radius:10px;color:#526b75;font-size:14px}
+@media(max-width:980px){.v2-grid,.proof-section,.problem-grid{grid-template-columns:1fr}.core-line,.maturity{grid-template-columns:1fr 1fr}.v2-grid img{height:auto}}
+@media(max-width:700px){.assurance-loop{grid-template-columns:1fr;padding:0}.loop-centre{position:static;transform:none;width:auto;height:auto;border-radius:14px;margin:0 0 2px;border:0}.core-line,.maturity{grid-template-columns:1fr}.core-item{border-right:0;border-bottom:1px solid var(--line)}.proof-copy h2{font-size:34px}}
+
 </style>
 <script src="site.js" defer></script>
 </head>
@@ -71,6 +83,15 @@
 <div><img src="https://i0.wp.com/imedx.com.au/wp-content/uploads/HIM-Companion-Suite-User-Screen_Code-Workflow_v1-RGB_web.jpg?fit=1600%2C1066&ssl=1" alt="HIM Companion Suite workflow" decoding="async"></div>
 </div></section>
 
+<section class="section mist"><div class="wrap problem-grid">
+<div><div class="eyebrow">The Problem</div><h2>Unproven autonomy is a funding and revenue assurance risk.</h2><p class="lead">Clinical coding underpins funding and revenue assurance across hospitals. The risk is not limited to one funding model: when automation is introduced at scale, every hospital needs evidence that coding performance is accurate, explainable and controlled before results flow into billing and claiming.</p></div>
+<div class="problem-points">
+<div class="problem-point"><strong>Accuracy must be visible</strong><span>A single episode-level percentage can conceal where coding risk actually sits.</span></div>
+<div class="problem-point"><strong>Performance must be local</strong><span>Results need to be benchmarked against your own coded data and casemix, not a generic benchmark.</span></div>
+<div class="problem-point"><strong>Assurance must sit before billing</strong><span>Governance and audit controls need to operate before a coding result becomes a financial outcome.</span></div>
+</div>
+</div></section>
+
 <section class="section" id="method"><div class="wrap">
 <div class="center"><div class="eyebrow">Core Message</div><h2>Measured. Tuned. Governed. Proven.</h2><p class="lead">On your own hospital's casemix before autonomy is enabled.</p></div>
 <div class="core-line">
@@ -83,23 +104,34 @@
 
 <section class="section mist"><div class="wrap">
 <div class="proof-section">
-<div class="proof-copy"><div class="eyebrow">01 — Measured</div><h2>Accuracy is defined at every coding decision.</h2><p>Rather than relying on a single headline accuracy number, the HCS v2.0 narrative measures performance across the coding decisions that drive the final episode outcome and benchmarks performance against the hospital's own coding standard.</p><div class="question">Question answered: At what level is accuracy measured?</div></div>
-<div class="proof-panel"><h3>What the validation should show</h3><ul><li>Separate measurement across principal diagnosis, additional diagnoses, procedure coding and final DRG outcome.</li><li>Benchmarking against the customer's own coded episodes.</li><li>Clear boundaries around documentation quality, document scope and grouping logic.</li><li>Performance evidence before any move toward autonomy.</li></ul></div>
+<div class="proof-copy"><div class="eyebrow">01 — Measured</div><h2>Start with a baseline. Benchmark it on your own coded data.</h2><p>Rather than leading with a universal accuracy target, HCS v2.0 establishes a baseline position at each coding segment, compares that performance with the hospital's existing human-coded data, and makes the variance visible before tuning begins.</p><div class="baseline-note"><strong>Baseline first:</strong> starting accuracy will vary by casemix, documentation quality, document scope and coding segment. The important measure is the evidenced movement from that starting point toward the high-accuracy level agreed for production.</div><div class="question">Question answered: At what level is accuracy measured, and against whose coding?</div></div>
+<div class="proof-panel"><h3>What the validation should show</h3><ul><li>Separate measurement across principal diagnosis, additional diagnoses, procedure coding and final DRG outcome.</li><li>A baseline compared against the customer's own coded episodes.</li><li>Segment-by-segment variance that tells the HIM and engineering teams exactly what needs tuning.</li><li>Clear boundaries around documentation quality, document scope and grouping logic.</li></ul></div>
 </div>
 
 <div class="proof-section">
-<div class="proof-copy"><div class="eyebrow">02 — Tuned</div><h2>Refined against real coding outcomes.</h2><p>The operating model should make coder correction part of the learning loop. HIM teams retain ownership of the benchmark, rule library and release decision, while corrections are classified at the relevant coding segment rather than disappearing into a generic model update.</p><div class="question">Question answered: What happens to a coder's correction?</div></div>
+<div class="proof-copy"><div class="eyebrow">02 — Tuned</div><h2>Tune each coding segment toward an agreed high-accuracy level.</h2><p>Once the baseline is understood, HCS v2.0 uses HIM and coding expertise to refine the areas where variance sits. Coder corrections are classified at the relevant coding segment, rules are refined, and progress is re-measured against the hospital's own coded outcomes rather than a generic benchmark.</p><div class="question">Question answered: What happens to a coder's correction, and how does accuracy improve?</div></div>
 <div class="proof-panel"><h3>What tuning should make visible</h3><ul><li>Decision-specific logic and specialist coding behaviour.</li><li>Coder corrections classified by coding segment and cause.</li><li>Rules and coding guidance maintained with accountable ownership.</li><li>A repeatable feedback loop between validation, correction and controlled release.</li></ul></div>
 </div>
 
 <div class="proof-section">
-<div class="proof-copy"><div class="eyebrow">03 — Governed</div><h2>Controlled and auditable before billing.</h2><p>Governance is not an afterthought. The HCS v2.0 narrative places controls between AI output and the confirmed billing outcome, giving coders and HIM leaders visibility into evidence, exceptions and release decisions.</p><div class="question">Question answered: What control sits between the confirmed DRG and the claim?</div></div>
+<div class="proof-copy"><div class="eyebrow">03 — Governed</div><h2>Controlled and auditable before funding or revenue is affected.</h2><p>Governance is not an afterthought. HCS v2.0 places visible controls between AI output and the confirmed coding outcome so public and private hospitals can protect funding integrity, revenue assurance and auditability before billing or claiming.</p><div class="question">Question answered: What control sits between the confirmed coding outcome and the financial result?</div></div>
 <div class="proof-panel"><h3>Governance points</h3><ul><li>Coding validation.</li><li>Grouping validation.</li><li>DRG confirmation.</li><li>Retrospective audit and governance review.</li><li>Reasoning/evidence visible to the user at validation.</li><li>Pre-bill controls for episodes requiring review.</li></ul></div>
 </div>
 
 <div class="proof-section">
 <div class="proof-copy"><div class="eyebrow">04 — Proven</div><h2>Autonomy is earned, not assumed.</h2><p>The HCS v2.0 story moves along a maturity curve only after performance is demonstrated first in benchmark validation and then at production scale. That keeps autonomy tied to evidence rather than marketing claims.</p><div class="question">Questions answered: Against whose coding is it benchmarked? Will you show the failures?</div></div>
 <div class="proof-panel"><h3>Two gates before autonomy</h3><ul><li>Gate 1 — benchmarked performance on the hospital's own casemix.</li><li>Gate 2 — proof that performance remains stable at production scale.</li><li>Exceptions and failure modes remain visible to governance teams.</li><li>Autonomy expands only where evidence supports it.</li></ul></div>
+</div>
+</div></section>
+
+<section class="section"><div class="wrap">
+<div class="center"><div class="eyebrow">The Assurance Loop</div><h2>Accuracy is not a one-off test. It is a controlled loop.</h2><p class="lead">Define the measure, apply HIM expertise, engineer the coding decision and close the loop before billing — with the clinical coder validating at the centre.</p></div>
+<div class="assurance-loop">
+<div class="loop-step"><strong>1. Define Accuracy</strong><span>Measure principal diagnosis, additional diagnoses, procedures and grouped DRG separately so the risk is visible.</span></div>
+<div class="loop-step"><strong>2. Apply HIM Expertise</strong><span>Health Information Managers set the gold standard, govern the rules and own release decisions.</span></div>
+<div class="loop-centre"><div><small>Control</small>Clinical coder validates</div></div>
+<div class="loop-step"><strong>3. Engineer Autocoding</strong><span>Decision-specific coding logic is tuned at segment level against defined document sets and real outcomes.</span></div>
+<div class="loop-step"><strong>4. Assure the Loop</strong><span>Coder corrections, rules checks and audit findings feed back into tuning before the financial outcome leaves the organisation.</span></div>
 </div>
 </div></section>
 
