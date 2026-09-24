@@ -1,0 +1,17 @@
+current_url,proposed_destination,status,reason,owner
+https://imedx.com.au/,/,retain,Homepage remains primary corporate entry,Krishna/Nishant
+https://imedx.com.au/solutions/clinical-documentation-solutions/,/solutions/clinical-documentation/,proposed,Create one canonical documentation hub,Krishna/Nishant
+https://imedx.com.au/solutions/medical-transcription-hospitals/,/solutions/clinical-documentation/hospitals/,proposed,Preserve hospital-specific search intent,Krishna
+https://imedx.com.au/solutions/medical-transcription-private-practice/,/solutions/clinical-documentation/private-practice/,proposed,Preserve private-practice search intent,Krishna
+https://imedx.com.au/solutions/medical-transcription-radiology-imaging/,/solutions/clinical-documentation/radiology-imaging/,proposed,Preserve radiology search intent,Krishna
+https://imedx.com.au/solutions/medical-transcription-medico-legal/,/solutions/clinical-documentation/medico-legal/,proposed,Preserve medico-legal search intent,Krishna
+https://imedx.com.au/solutions/medical-transcription-services/,/solutions/clinical-documentation/transcription/,proposed,Consolidate transcription service discovery,Krishna
+https://imedx.com.au/solutions/clinical-documentation-workflow-services/,/solutions/clinical-documentation/workflow/,proposed,Keep workflow-specific intent,Krishna
+https://imedx.com.au/solutions/technology-integration/,/solutions/clinical-documentation/integration/,proposed,Keep integration intent,Krishna
+https://imedx.com.au/solutions/outsourced-clinical-coding/,/solutions/outsourced-clinical-coding/,retain,Strong standalone service intent,Krishna
+https://imedx.com.au/solutions/him-services/,/solutions/him-services/,retain,Core professional-services pillar,Krishna
+https://imedx.com.au/solutions/revenue-cycle-management/,/solutions/revenue-cycle-management/,retain,Core strategic solution,Krishna
+https://imedx.com.au/products/companion-suite/,/products/him-companion-suite/,proposed,Clearer product URL while preserving existing equity through 301 if approved,Krishna/Nishant
+https://imedx.com.au/products/escription-one/,/products/escription-one/,retain,Existing product route where available,Krishna
+https://imedx.com.au/resource-hub/,/resources/,proposed,Shorter taxonomy aligned to new IA,Krishna/Nishant
+https://imedx.com.au/client-login/,/client-login/,retain,Utility route should remain stable,Yamuna
