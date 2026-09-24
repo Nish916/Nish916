@@ -172,6 +172,22 @@
     });
   });
 
+  // Progressive reveal for sections/cards. Pure presentation; content is unchanged.
+  const revealTargets = document.querySelectorAll(
+    ".section > .wrap, .cta > .wrap, .route, .resource, .service, .benefit, .module-card, .journey-card, .outcome, .support, .integration, .audience, .option, .feature, .stage, .problem-point, .loop-step"
+  );
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) {
+    revealTargets.forEach((el) => el.classList.add("reveal-ready"));
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("reveal-in");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.08, rootMargin: "0px 0px -24px 0px" });
+    revealTargets.forEach((el) => revealObserver.observe(el));
+  }
+
   const thresholds = [50, 75, 90];
   const sent = new Set();
   const onScroll = () => {
