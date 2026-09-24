@@ -132,14 +132,43 @@
     } catch (_) {}
   });
 
-  document.querySelectorAll(".role-pill").forEach((pill) => {
-    pill.addEventListener("click", () => {
-      const label = pill.querySelector(".role-pill-title")?.textContent?.trim() || "";
-      push("persona_select", {
-        persona_name: label,
-        source_component: "hcs_role_cards",
-        link_text: label
+  document.querySelectorAll("[data-audience-combobox]").forEach((box) => {
+    const trigger = box.querySelector(".audience-trigger");
+    const menu = box.querySelector(".audience-menu");
+    const options = [...box.querySelectorAll(".audience-option")];
+    if (!trigger || !menu) return;
+
+    const close = () => {
+      trigger.setAttribute("aria-expanded", "false");
+      menu.hidden = true;
+    };
+    const open = () => {
+      trigger.setAttribute("aria-expanded", "true");
+      menu.hidden = false;
+    };
+
+    trigger.addEventListener("click", () => {
+      const expanded = trigger.getAttribute("aria-expanded") === "true";
+      expanded ? close() : open();
+    });
+
+    options.forEach((option) => {
+      option.addEventListener("click", () => {
+        push("persona_select", {
+          persona_name: option.dataset.persona || cleanText(option),
+          source_component: "hcs_modern_dropdown",
+          link_text: cleanText(option)
+        });
+        close();
       });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!box.contains(e.target)) close();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") close();
     });
   });
 
