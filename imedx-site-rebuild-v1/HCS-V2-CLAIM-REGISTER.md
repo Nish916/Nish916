@@ -10,9 +10,16 @@ Purpose: keep campaign copy evidence-first and prevent unverified quantitative c
 - Performance should be proved on customer episodes before workflow autonomy is switched on.
 - Primary campaign readers: HIM leaders and CFOs.
 
+## Latest stakeholder direction
+- Generalise the initial accuracy message: establish a baseline at each coding segment, benchmark it against the hospital's existing coded data, then tune toward agreed high-accuracy levels.
+- Treat the suggested "60–80% out of the box to 95%+ and beyond" range as illustrative stakeholder language, not a universal website claim, until source, scope and public-use approval are confirmed.
+- Broaden the problem statement from ABF-specific funding risk to Funding and Revenue Assurance across hospitals and funding models.
+- Preserve the evidence-first principle: the customer's own coded episodes remain the benchmark and autonomy remains gated by validation.
+
 ## Quantitative / technical claims requiring source confirmation before public use
 Do not surface these on production pages until evidence owner and public-use approval are recorded:
 - 40 + 20 validation method.
+- Illustrative out-of-box range of 60–80%.
 - Release threshold greater than 95%.
 - Tuning toward 99%.
 - 98.5% AI DRG accuracy.
