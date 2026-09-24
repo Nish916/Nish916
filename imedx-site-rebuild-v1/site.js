@@ -13,6 +13,67 @@
 
   window.dataLayer.push({ event: "page_context", ...context });
 
+  // Accessibility and responsive navigation.
+  const header = document.querySelector("header");
+  const nav = document.querySelector(".nav");
+  const navlinks = document.querySelector(".navlinks");
+  const main = document.querySelector("main");
+
+  if (main && !main.id) main.id = "main-content";
+
+  if (header && main && !document.querySelector(".skip-link")) {
+    const skip = document.createElement("a");
+    skip.className = "skip-link";
+    skip.href = "#main-content";
+    skip.textContent = "Skip to main content";
+    document.body.insertBefore(skip, document.body.firstChild);
+  }
+
+  if (nav && navlinks && !document.querySelector(".menu-toggle")) {
+    const toggle = document.createElement("button");
+    toggle.type = "button";
+    toggle.className = "menu-toggle";
+    toggle.setAttribute("aria-label", "Open navigation");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.innerHTML = "☰";
+    nav.insertBefore(toggle, navlinks);
+
+    const closeMenu = () => {
+      navlinks.classList.remove("mobile-open");
+      document.body.classList.remove("nav-open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Open navigation");
+      toggle.innerHTML = "☰";
+    };
+
+    toggle.addEventListener("click", () => {
+      const open = navlinks.classList.toggle("mobile-open");
+      document.body.classList.toggle("nav-open", open);
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+      toggle.innerHTML = open ? "×" : "☰";
+    });
+
+    navlinks.addEventListener("click", (e) => {
+      if (e.target.closest("a") && window.matchMedia("(max-width: 980px)").matches) closeMenu();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMenu();
+    });
+
+    window.addEventListener("resize", () => {
+      if (!window.matchMedia("(max-width: 980px)").matches) closeMenu();
+    });
+  }
+
+  // Mark the current local page in navigation where possible.
+  const currentFile = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
+  document.querySelectorAll("a[href]").forEach((link) => {
+    const raw = (link.getAttribute("href") || "").split("#")[0].toLowerCase();
+    if (raw && raw === currentFile) link.setAttribute("aria-current", "page");
+  });
+
   const push = (event, params = {}) => {
     window.dataLayer.push({ event, ...context, ...params });
   };
