@@ -117,3 +117,92 @@ button.filter{font:inherit;cursor:pointer}
 a:focus-visible,button:focus-visible{outline:3px solid rgba(252,103,44,.55);outline-offset:3px}
 .skip-link{position:absolute;left:-9999px;top:8px;background:#fff;color:var(--navy);padding:10px 14px;z-index:100}
 .skip-link:focus{left:8px}
+
+
+/* ===== V2 visual polish + responsive navigation ===== */
+body{overflow-x:hidden}
+main{display:block}
+::selection{background:rgba(92,185,178,.28);color:var(--navy)}
+p{margin-top:0}
+h1,h2,h3{font-weight:700}
+h3{line-height:1.2}
+.lead{max-width:760px}
+.section>.wrap>.eyebrow,.section .center>.eyebrow{margin-bottom:10px}
+.btn{min-height:44px;transition:transform .18s ease,box-shadow .18s ease,background .18s ease,border-color .18s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary:hover{background:#e95a22;box-shadow:0 9px 22px rgba(252,103,44,.23)}
+.btn.secondary:hover{border-color:#8ca8af;background:#f9fcfc}
+.route,.resource,.service,.benefit,.module-card,.journey-card,.outcome,.support,.integration,.audience{
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease
+}
+.route:hover,.resource:hover,.service:hover,.benefit:hover,.module-card:hover,.journey-card:hover,.outcome:hover,.support:hover,.integration:hover{
+  transform:translateY(-3px);border-color:#bfd5d9;box-shadow:0 16px 36px rgba(6,51,74,.08)
+}
+header{box-shadow:0 1px 0 rgba(6,51,74,.02)}
+.navlinks>a,.navitem>a{position:relative}
+.navlinks>a[aria-current="page"],.navitem>a[aria-current="page"]{color:var(--navy)}
+.navlinks>a[aria-current="page"]:before,.navitem>a[aria-current="page"]:before{
+  content:"";position:absolute;left:0;right:0;bottom:-10px;height:2px;background:var(--teal)
+}
+.menu-toggle{
+  display:none;border:1px solid var(--line);background:#fff;color:var(--navy);
+  width:44px;height:44px;border-radius:8px;align-items:center;justify-content:center;
+  font-size:23px;line-height:1;cursor:pointer
+}
+.mobile-nav-label{display:none}
+.footer{padding:46px 0 34px}
+.footer p{color:#9fb5bc}
+.footer a:hover{color:#fff}
+.eyebrow{margin-bottom:8px}
+.card[hidden]{display:none!important}
+
+@media(max-width:1100px){
+  .navlinks{gap:17px}
+  .logo{width:170px}
+  h1{font-size:56px}
+}
+
+@media(max-width:980px){
+  .topbar{display:none}
+  header{top:0}
+  .nav{height:72px;position:relative}
+  .logo{width:164px}
+  .menu-toggle{display:inline-flex;margin-left:auto}
+  .navlinks{
+    display:none;position:absolute;top:72px;left:0;right:0;background:#fff;
+    border:1px solid var(--line);border-top:0;border-radius:0 0 14px 14px;
+    box-shadow:0 22px 44px rgba(6,51,74,.13);padding:12px;
+    max-height:calc(100vh - 84px);overflow:auto;align-items:stretch;gap:2px
+  }
+  .navlinks.mobile-open{display:flex;flex-direction:column}
+  .navlinks .navitem,.navlinks>a:not(.primary){display:block}
+  .navlinks>a,.navitem>a{display:flex;align-items:center;min-height:46px;padding:10px 12px;border-radius:7px}
+  .navlinks>a.primary{margin-top:6px}
+  .navlinks>a[aria-current="page"]:before,.navitem>a[aria-current="page"]:before{display:none}
+  .navitem>a:after{margin-left:auto}
+  .dropdown{
+    position:static;width:auto;box-shadow:none;border:0;border-left:2px solid #dcebea;
+    padding:2px 0 2px 10px;margin:0 0 5px 12px;border-radius:0;
+    opacity:1;visibility:visible;transform:none;background:transparent
+  }
+  .dropdown a{padding:9px 10px;font-size:13px}
+  body.nav-open{overflow:hidden}
+  .hero-grid,.product-block,.split,.rcm-grid{gap:34px}
+  .hero{padding-top:52px}
+  .section{padding:70px 0}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+
+@media(max-width:640px){
+  .wrap{width:min(100% - 28px,1220px)}
+  h1{font-size:42px;line-height:1.04}
+  h2{font-size:32px}
+  .lead{font-size:18px}
+  .hero,.hcs-hero,.pagehero,.rcm-hero,.persona-hero,.resource-hero{padding-top:46px!important;padding-bottom:48px!important}
+  .section{padding:54px 0}
+  .hero-actions{gap:9px}
+  .hero-actions .btn{width:100%}
+  .route,.resource,.service,.benefit,.module-card,.journey-card,.outcome,.support,.integration,.audience{padding:20px}
+  .footer{padding-top:34px}
+  .footer-grid{grid-template-columns:1fr}
+}
