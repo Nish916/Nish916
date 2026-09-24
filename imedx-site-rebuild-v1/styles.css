@@ -220,3 +220,20 @@ header{box-shadow:0 1px 0 rgba(6,51,74,.02)}
 @media(max-width:640px){
   .logo{width:110px!important;max-height:40px!important}
 }
+
+/* HCS priority strip + role picker */
+.hcs-priority{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}
+.hcs-priority-grid{min-height:108px;display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center}
+.hcs-priority strong{display:block;color:var(--navy);font-size:24px;line-height:1.15;margin:3px 0 5px}
+.hcs-priority span{display:block;color:#607680;max-width:760px}
+.hcs-priority .hero-actions{margin-top:0}
+.role-picker{max-width:720px;margin:28px auto 0;padding:20px;border:1px solid var(--line);border-radius:10px;background:#fff}
+.role-picker label{display:block;font-weight:800;color:var(--navy);margin-bottom:8px}
+.role-picker-row{display:grid;grid-template-columns:1fr auto;gap:10px}
+.role-picker select{width:100%;min-height:46px;border:1px solid #bfd0d4;border-radius:6px;padding:0 13px;background:#fff;color:var(--ink);font:inherit}
+.role-picker select:focus-visible{outline:3px solid rgba(252,103,44,.35);outline-offset:2px}
+@media(max-width:780px){
+  .hcs-priority-grid{grid-template-columns:1fr;padding:24px 0}
+  .hcs-priority .hero-actions{margin-top:4px}
+  .role-picker-row{grid-template-columns:1fr}
+}
