@@ -3925,3 +3925,127 @@ body[data-page-type="homepage"] .section{
   }
   .v16-bar i{transform:none!important;transition:none!important}
 }
+
+/* v18 HCS contextual navigation — completes the product-page navigation experience */
+#overview,#modules,#workflow,#control,#outcomes,#security,#faq{
+  scroll-margin-top:150px;
+}
+.hcs-context-nav{
+  position:sticky;
+  top:90px;
+  z-index:42;
+  background:rgba(255,255,255,.965);
+  backdrop-filter:blur(14px);
+  border-top:1px solid #e1e9eb;
+  border-bottom:1px solid #dce6e8;
+  box-shadow:0 8px 24px rgba(6,51,74,.045);
+}
+.hcs-context-inner{
+  min-height:54px;
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  gap:28px;
+  align-items:center;
+}
+.hcs-context-brand{
+  display:flex;
+  flex-direction:column;
+  min-width:150px;
+  color:#073b55;
+}
+.hcs-context-brand span{
+  font-size:12px;
+  line-height:1.1;
+  font-weight:800;
+}
+.hcs-context-brand small{
+  margin-top:2px;
+  color:#71868e;
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:.11em;
+  font-weight:700;
+}
+.hcs-context-links{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  min-width:0;
+}
+.hcs-context-links a{
+  position:relative;
+  padding:18px 9px 16px;
+  white-space:nowrap;
+  color:#526b75;
+  font-size:11.5px;
+  font-weight:650;
+  transition:color .18s ease;
+}
+.hcs-context-links a::after{
+  content:"";
+  position:absolute;
+  left:9px;
+  right:9px;
+  bottom:0;
+  height:2px;
+  background:#409b96;
+  transform:scaleX(0);
+  transform-origin:center;
+  transition:transform .22s ease;
+}
+.hcs-context-links a:hover,
+.hcs-context-links a.is-active{
+  color:#073b55;
+}
+.hcs-context-links a.is-active::after{
+  transform:scaleX(1);
+}
+.hcs-context-cta{
+  padding:8px 12px;
+  border:1px solid #9fc9c6;
+  border-radius:4px;
+  color:#1b6765;
+  background:#f5fbfa;
+  font-size:11px;
+  font-weight:800;
+  white-space:nowrap;
+  transition:background .18s ease,border-color .18s ease;
+}
+.hcs-context-cta:hover{
+  background:#eaf6f5;
+  border-color:#7fb8b3;
+}
+@media(max-width:1080px){
+  .hcs-context-inner{
+    grid-template-columns:auto 1fr;
+    gap:18px;
+  }
+  .hcs-context-cta{display:none}
+  .hcs-context-links{
+    justify-content:flex-start;
+    overflow-x:auto;
+    scrollbar-width:none;
+  }
+  .hcs-context-links::-webkit-scrollbar{display:none}
+}
+@media(max-width:720px){
+  #overview,#modules,#workflow,#control,#outcomes,#security,#faq{
+    scroll-margin-top:132px;
+  }
+  .hcs-context-nav{top:84px}
+  .hcs-context-inner{
+    min-height:48px;
+    display:block;
+  }
+  .hcs-context-brand{display:none}
+  .hcs-context-links{
+    width:100%;
+    gap:2px;
+    padding:0 2px;
+  }
+  .hcs-context-links a{
+    padding:15px 9px 13px;
+    font-size:10.5px;
+  }
+}
