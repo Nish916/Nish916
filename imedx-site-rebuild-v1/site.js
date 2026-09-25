@@ -356,3 +356,68 @@
     });
   }
 })();
+
+/* v17 restrained motion + numeric emphasis */
+(() => {
+  const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const revealTargets = [
+    '.v16-head','.v13-heading','.v13-split',
+    '.v16-step','.v16-choice article','.v16-output','.v16-security article',
+    '.v13-card','.v13-dark-card','.v13-stat','.v16-metric',
+    '.v16-control','.v16-panel-card'
+  ];
+
+  const targets = [...document.querySelectorAll(revealTargets.join(','))];
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    targets.forEach(el => el.classList.add('is-inview'));
+  } else {
+    const io = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const siblings = [...(el.parentElement?.children || [])];
+        const index = Math.max(0, siblings.indexOf(el));
+        el.style.transitionDelay = Math.min(index * 45, 180) + 'ms';
+        el.classList.add('is-inview');
+        obs.unobserve(el);
+      });
+    }, { threshold: 0.14, rootMargin: '0px 0px -5% 0px' });
+    targets.forEach(el => io.observe(el));
+  }
+
+  const numberEls = [...document.querySelectorAll('.v13-stat strong, .v16-metric strong')];
+  const animateNumber = (el) => {
+    if (el.dataset.counted === '1') return;
+    const original = el.textContent.trim();
+    const match = original.match(/^(.*?)(\d+(?:\.\d+)?)(.*)$/);
+    if (!match) return;
+    const [, prefix, numStr, suffix] = match;
+    const target = Number(numStr);
+    if (!Number.isFinite(target) || target <= 0) return;
+    el.dataset.counted = '1';
+    if (reduceMotion) return;
+    const decimals = (numStr.split('.')[1] || '').length;
+    const duration = Math.min(1200, Math.max(650, target * 4));
+    const start = performance.now();
+    const frame = (now) => {
+      const p = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - p, 3);
+      const value = target * eased;
+      el.textContent = prefix + value.toFixed(decimals) + suffix;
+      if (p < 1) requestAnimationFrame(frame);
+      else el.textContent = original;
+    };
+    requestAnimationFrame(frame);
+  };
+
+  if ('IntersectionObserver' in window && !reduceMotion) {
+    const nio = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        animateNumber(entry.target);
+        obs.unobserve(entry.target);
+      });
+    }, { threshold: 0.45 });
+    numberEls.forEach(el => nio.observe(el));
+  }
+})();
