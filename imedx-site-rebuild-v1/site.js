@@ -421,3 +421,45 @@
     numberEls.forEach(el => nio.observe(el));
   }
 })();
+
+
+/* v18 HCS contextual sticky navigation */
+(() => {
+  const nav = document.querySelector('.hcs-context-nav');
+  if (!nav) return;
+
+  const links = [...nav.querySelectorAll('[data-hcs-target]')];
+  const targets = links
+    .map(link => document.getElementById(link.dataset.hcsTarget))
+    .filter(Boolean);
+
+  const setActive = (id) => {
+    links.forEach(link => {
+      const active = link.dataset.hcsTarget === id;
+      link.classList.toggle('is-active', active);
+      if (active) link.setAttribute('aria-current','location');
+      else link.removeAttribute('aria-current');
+    });
+  };
+
+  links.forEach(link => {
+    link.addEventListener('click', () => setActive(link.dataset.hcsTarget));
+  });
+
+  if ('IntersectionObserver' in window) {
+    const ratios = new Map();
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => ratios.set(entry.target.id, entry.isIntersecting ? entry.intersectionRatio : 0));
+      const visible = [...ratios.entries()].sort((a,b) => b[1]-a[1])[0];
+      if (visible && visible[1] > 0) setActive(visible[0]);
+    }, {
+      rootMargin:'-150px 0px -58% 0px',
+      threshold:[0,.08,.18,.35,.55]
+    });
+    targets.forEach(el => io.observe(el));
+  }
+
+  const initial = location.hash.replace('#','');
+  if (links.some(l => l.dataset.hcsTarget === initial)) setActive(initial);
+  else setActive('modules');
+})();
