@@ -4049,3 +4049,21 @@ body[data-page-type="homepage"] .section{
     font-size:10.5px;
   }
 }
+
+/* v19 full-site IA, resource v2 and readiness assessment */
+.site-legal-row{display:flex;justify-content:flex-end;gap:16px;padding-top:12px;padding-bottom:18px;font-size:11px;color:#71868e}
+.site-legal-row a:hover{color:#073b55}
+.readiness-mini{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:24px;background:#fff}
+.readiness-mini b{padding:14px;border:1px solid #dbe6e8;border-radius:6px;color:#315b6b;font-size:12px;text-align:center}
+.readiness-form{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.readiness-q{margin:0;padding:22px;border:1px solid #dbe6e8;border-radius:10px;background:#fff}
+.readiness-q legend{display:grid;grid-template-columns:34px 1fr;column-gap:10px;width:100%;padding:0;margin:0 0 16px}
+.readiness-q legend span{grid-row:1/3;display:grid;place-items:center;width:32px;height:32px;border:1px solid #bcd4d5;border-radius:50%;font-size:10px;font-weight:800;color:#337d79}
+.readiness-q legend b{font-size:17px;color:#073b55}.readiness-q legend small{font-size:12px;line-height:1.45;color:#6a7f87}
+.readiness-q label{display:block;padding:9px 10px;margin-top:7px;border:1px solid #e0e8ea;border-radius:6px;font-size:13px;color:#536d77;cursor:pointer}
+.readiness-q label:hover{border-color:#bcd5d6;background:#f9fcfc}.readiness-q input{margin-right:8px}
+.readiness-actions{grid-column:1/-1;display:flex;gap:10px;margin-top:8px}
+.readiness-result{margin-top:28px;padding:28px;border:1px solid #bcdad7;border-radius:12px;background:#f4faf9;position:relative}
+.readiness-result h2{font-size:32px;margin:6px 0 10px}.readiness-result p{max-width:760px;color:#5b737c}
+.readiness-score{position:absolute;right:28px;top:28px;text-align:right}.readiness-score span{font-size:42px;font-weight:800;color:#267c78}.readiness-score small{font-size:14px;color:#71868e}
+@media(max-width:800px){.readiness-form{grid-template-columns:1fr}.readiness-score{position:static;text-align:left;margin:12px 0}.readiness-mini{grid-template-columns:1fr 1fr}}
