@@ -89,7 +89,7 @@
     const location = link.closest("header") ? "header" :
       link.closest("footer") ? "footer" :
       link.closest(".cta") ? "cta_section" :
-      link.closest(".hero,.pagehero,.hcs-hero,.persona-hero,.rcm-hero,.resource-hero") ? "hero" :
+      link.closest(".hero,.home-hero,.pagehero,.hcs-hero,.persona-hero,.rcm-hero,.resource-hero,.detail-hero,.v2-hero") ? "hero" :
       "content";
 
     if (/persona-(cfo|him-manager|coder)\.html/i.test(href)) {
@@ -174,7 +174,7 @@
 
   // Progressive reveal for sections/cards. Pure presentation; content is unchanged.
   const revealTargets = document.querySelectorAll(
-    ".section > .wrap, .cta > .wrap, .route, .resource, .service, .benefit, .module-card, .journey-card, .outcome, .support, .integration, .audience, .option, .feature, .stage, .problem-point, .loop-step"
+    ".section > .wrap, .cta > .wrap, .home-beliefs article, .home-solution-card, .home-product-grid, .home-documentation-grid, .home-rcm-grid, .home-audience-card, .home-resource-grid article, .home-final-cta-grid, .route, .resource, .service, .benefit, .module-card, .journey-card, .outcome, .support, .integration, .audience, .option, .feature, .stage, .problem-point, .loop-step"
   );
   if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) {
     revealTargets.forEach((el) => el.classList.add("reveal-ready"));
