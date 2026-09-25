@@ -89,10 +89,10 @@
     const location = link.closest("header") ? "header" :
       link.closest("footer") ? "footer" :
       link.closest(".cta") ? "cta_section" :
-      link.closest(".hero,.home-hero,.pagehero,.hcs-hero,.persona-hero,.rcm-hero,.resource-hero,.detail-hero,.v2-hero") ? "hero" :
+      link.closest(".hero,.home-hero,.v9-hero,.pagehero,.hcs-hero,.hcs-v10-hero,.persona-hero,.rcm-hero,.resource-hero,.detail-hero,.product-v10-hero,.v2-hero") ? "hero" :
       "content";
 
-    if (/persona-(cfo|him-manager|coder)\.html/i.test(href)) {
+    if (/persona-(cfo|him-manager|coder)\.html/i.test(href) && !link.closest("[data-audience-combobox]")) {
       const personaName = href.includes("cfo") ? "CFO" : href.includes("him-manager") ? "Health Information Manager" : "Coder";
       push("persona_select", { persona_name: personaName, source_component: location, link_text: text });
     }
@@ -195,6 +195,7 @@
   const hcsCount = document.getElementById("v9-hcs-count");
   const hcsProgress = document.getElementById("v9-hcs-progress");
   if (hcsSteps.length && hcsImage && hcsTitle) {
+    const seenHomepageHcsModules = new Set();
     const setHcsStep = (step) => {
       const index = Number(step.dataset.index || 0);
       hcsSteps.forEach((s) => s.classList.toggle("is-active", s === step));
@@ -207,10 +208,11 @@
         if (hcsProgress) hcsProgress.style.width = (((index + 1) / hcsSteps.length) * 100) + "%";
         hcsImage.classList.remove("is-changing");
       }, 110);
-      push("homepage_hcs_module_view", {
-        module_name: step.dataset.title || "",
-        module_index: index + 1
-      });
+      const moduleName = step.dataset.title || "";
+      if (!seenHomepageHcsModules.has(moduleName)) {
+        seenHomepageHcsModules.add(moduleName);
+        push("homepage_hcs_module_view", { module_name: moduleName, module_index: index + 1 });
+      }
     };
 
     if ("IntersectionObserver" in window && !window.matchMedia("(max-width: 980px)").matches) {
@@ -233,6 +235,7 @@
   const hcsPageCount = document.getElementById("hcs-page-count");
   const hcsPageProgress = document.getElementById("hcs-page-progress");
   if (hcsPageSteps.length && hcsPageImage && hcsPageTitle) {
+    const seenHcsPageModules = new Set();
     const setHcsPageStep = (step) => {
       const index = Number(step.dataset.index || 0);
       hcsPageSteps.forEach((s) => s.classList.toggle("is-active", s === step));
@@ -245,7 +248,11 @@
         if (hcsPageProgress) hcsPageProgress.style.width = (((index + 1) / hcsPageSteps.length) * 100) + "%";
         hcsPageImage.classList.remove("is-changing");
       }, 110);
-      push("hcs_page_module_view", { module_name: step.dataset.title || "", module_index: index + 1 });
+      const moduleName = step.dataset.title || "";
+      if (!seenHcsPageModules.has(moduleName)) {
+        seenHcsPageModules.add(moduleName);
+        push("hcs_page_module_view", { module_name: moduleName, module_index: index + 1 });
+      }
     };
     if ("IntersectionObserver" in window && !window.matchMedia("(max-width: 1080px)").matches) {
       const observer = new IntersectionObserver((entries) => {
@@ -300,15 +307,17 @@
   });
 
   // Section-view analytics for homepage and future long-form pages.
-  const trackedSections = [...document.querySelectorAll("[data-track-section]")];
+  const trackedSections = [...new Set([...document.querySelectorAll("[data-track-section], main > section")])];
   if (trackedSections.length && "IntersectionObserver" in window) {
     const seenSections = new Set();
     const sectionObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        const name = entry.target.dataset.trackSection || "";
-        if (!entry.isIntersecting || seenSections.has(name)) return;
+        if (!entry.isIntersecting) return;
+        const fallbackIndex = trackedSections.indexOf(entry.target) + 1;
+        const name = entry.target.dataset.trackSection || (context.page_type + "_section_" + fallbackIndex);
+        if (seenSections.has(name)) return;
         seenSections.add(name);
-        push("section_view", { section_name: name });
+        push("section_view", { section_name: name, section_index: fallbackIndex });
       });
     }, { threshold: 0.35 });
     trackedSections.forEach((section) => sectionObserver.observe(section));
