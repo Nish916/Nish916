@@ -8,7 +8,7 @@
     solution: body.dataset.solution || "",
     persona: body.dataset.persona || "",
     content_group: body.dataset.contentGroup || "",
-    environment: "prototype"
+    environment: location.hostname.includes("vercel.app") ? "staging" : "production"
   };
 
   window.dataLayer.push({ event: "page_context", ...context });
@@ -462,4 +462,28 @@
   const initial = location.hash.replace('#','');
   if (links.some(l => l.dataset.hcsTarget === initial)) setActive(initial);
   else setActive('modules');
+})();
+
+/* v19 HCS Readiness Assessment */
+(() => {
+  const form=document.querySelector('[data-readiness-tool]');
+  const result=document.querySelector('[data-readiness-result]');
+  if(!form||!result) return;
+  const push=(event,data={})=>{window.dataLayer=window.dataLayer||[];window.dataLayer.push({event,...data})};
+  let started=false;
+  form.addEventListener('change',()=>{if(!started){started=true;push('tool_start',{tool_name:'hcs_readiness_assessment',product:'HIM Companion Suite'})}});
+  form.addEventListener('submit',(e)=>{
+    e.preventDefault();
+    const fd=new FormData(form); let score=0; let answered=0;
+    for(const v of fd.values()){score+=Number(v)||0;answered++}
+    if(answered<8) return;
+    let title,copy,band;
+    if(score<=6){band='foundation';title='Foundation stage';copy='Your organisation may benefit from clarifying governance, baselines and workflow ownership before progressing to a structured HCS validation discussion.'}
+    else if(score<=12){band='developing';title='Developing readiness';copy='Several foundations appear to be in place. Focus next on the weaker dimensions, especially governance, data quality, integration and assurance before scaling evaluation.'}
+    else{band='validation_ready';title='Ready for structured validation';copy='Your responses suggest a stronger foundation for a governed evaluation. The next step is to validate assumptions against your own casemix, workflow, controls and measurable baselines.'}
+    result.hidden=false;result.querySelector('[data-result-title]').textContent=title;result.querySelector('[data-result-copy]').textContent=copy;result.querySelector('[data-result-score]').textContent=score;
+    result.scrollIntoView({behavior:'smooth',block:'center'});
+    push('tool_complete',{tool_name:'hcs_readiness_assessment',score,readiness_band:band,product:'HIM Companion Suite'});
+  });
+  form.addEventListener('reset',()=>{result.hidden=true;started=false});
 })();
