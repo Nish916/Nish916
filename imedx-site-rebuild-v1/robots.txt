@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /
+
+# Prototype/staging site: intentionally blocked from indexing.
+Sitemap: https://imedx-anz-redesign.vercel.app/sitemap.xml
