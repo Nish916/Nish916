@@ -20,3 +20,25 @@ These are governance/production-access dependencies, not unfinished build work:
 - remove noindex only after leadership approval;
 - execute official-domain 301 changes only after URL migration approval;
 - new client quotes/logos require normal client approval before publication.
+
+
+## Live verification — 25 Sep 2026
+- Production preview deployment: READY
+- 18/18 primary + secondary routes returned HTTP 200
+- All 18 pages verified with:
+  - non-empty title
+  - non-empty meta description
+  - exactly one H1
+  - JSON-LD schema
+  - staging noindex
+- Shared CSS and JS returned HTTP 200
+- sitemap.xml and robots.txt returned HTTP 200
+- Resource Hub v2 live
+- HCS Readiness Assessment live
+- CFO / HIM Manager / Clinical Coder pages live
+- Hospitals / Private Practice / Radiology / Medico-Legal pages live
+- HCS sticky contextual navigation live
+- Current Edge deployment has no new runtime-error cluster; the only logged deprecation warning belongs to the superseded Node proxy deployment.
+
+## Build status
+No known prototype build item remains intentionally partial or pending. Remaining actions are external governance/official-production activation decisions, not unfinished implementation.
