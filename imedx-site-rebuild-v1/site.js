@@ -174,7 +174,7 @@
 
   // Progressive reveal for sections/cards. Pure presentation; content is unchanged.
   const revealTargets = document.querySelectorAll(
-    ".section > .wrap, .cta > .wrap, .home-beliefs article, .home-solution-card, .home-product-grid, .home-documentation-grid, .home-rcm-grid, .home-audience-card, .home-resource-grid article, .home-final-cta-grid, .route, .resource, .service, .benefit, .module-card, .journey-card, .outcome, .support, .integration, .audience, .option, .feature, .stage, .problem-point, .loop-step"
+    ".section > .wrap, .cta > .wrap, .neo-signal-grid article, .neo-bento-card, .neo-product-shell, .neo-module-rail article, .neo-docs-grid, .neo-rcm-flow article, .neo-audience-grid > a, .neo-resource-grid article, .neo-final-grid, .home-beliefs article, .home-solution-card, .home-product-grid, .home-documentation-grid, .home-rcm-grid, .home-audience-card, .home-resource-grid article, .home-final-cta-grid, .route, .resource, .service, .benefit, .module-card, .journey-card, .outcome, .support, .integration, .audience, .option, .feature, .stage, .problem-point, .loop-step"
   );
   if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) {
     revealTargets.forEach((el) => el.classList.add("reveal-ready"));
