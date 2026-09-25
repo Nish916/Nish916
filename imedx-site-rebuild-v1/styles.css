@@ -2817,3 +2817,26 @@ body:not([data-page-type="homepage"]) .cta p{max-width:790px;color:#c4d5da!impor
   body:not([data-page-type="homepage"]) .flow,body:not([data-page-type="homepage"]) .path-grid,body:not([data-page-type="homepage"]) .timeline,body:not([data-page-type="homepage"]) .journey,
   body[data-page-type="persona"] .route-grid,body[data-page-type="resource"] .resource-grid,body[data-product="HIM Companion Suite"] .modules{grid-template-columns:1fr!important}
 }
+
+
+/* ===== HCS V10 immersive product page ===== */
+.hcs-v10-hero-grid{display:grid;grid-template-columns:.84fr 1.16fr;gap:70px;align-items:center;position:relative;z-index:2}
+.hcs-v10-hero-stage{position:relative;min-height:570px}
+.hcs-v10-main-screen{position:absolute;right:0;top:10px;width:84%;overflow:hidden;border:1px solid rgba(255,255,255,.15);border-radius:28px;background:#fff;box-shadow:0 38px 90px rgba(0,0,0,.28)}
+.hcs-v10-main-screen>img{width:100%;height:500px;object-fit:contain!important;padding:12px!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:#f6fafb!important}
+.hcs-v10-chat{position:absolute;left:0;bottom:0;width:58%;overflow:hidden;border:1px solid rgba(255,255,255,.16);border-radius:20px;background:#fff;box-shadow:0 28px 65px rgba(0,0,0,.25);transform:rotate(-1deg)}
+.hcs-v10-chat img{width:100%!important;height:230px!important;object-fit:cover!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important}
+.hcs-v10-intro{padding:72px 0;background:#fff;border-bottom:1px solid var(--line)}
+.hcs-v10-intro-grid{display:grid;grid-template-columns:1.05fr .8fr;gap:70px;align-items:end}
+.hcs-v10-intro h2{margin:8px 0 0;font-size:46px}.hcs-v10-intro p{margin:0;font-size:16px;line-height:1.75}
+.hcs-v10-story{padding:106px 0 120px;background:linear-gradient(180deg,#f1f7f7,#eaf3f3)}
+.hcs-v10-heading{display:grid;grid-template-columns:1.08fr .78fr;gap:64px;align-items:end;margin-bottom:44px}.hcs-v10-heading h2{margin:8px 0 0;font-size:48px}.hcs-v10-heading>p{margin:0;line-height:1.72}
+.hcs-v10-scroll{display:grid;grid-template-columns:1.18fr .82fr;gap:64px;align-items:start}.hcs-v10-sticky{position:sticky;top:110px}
+.hcs-v10-steps{display:grid}.hcs-v10-step{min-height:410px;padding:50px 6px 55px 24px;border-left:1px solid #cbdcde;opacity:.42;transition:.2s ease}.hcs-v10-step.is-active{opacity:1;border-left:3px solid #58b8b0;transform:translateX(-1px)}.hcs-v10-step small{color:#3f938e;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}.hcs-v10-step h3{margin:13px 0 14px;font-size:32px}.hcs-v10-step p{max-width:470px;font-size:14px;line-height:1.72}
+.hcs-v10-why{background:#fff}.hcs-v10-heading-dark{margin-bottom:35px}.hcs-v10-benefit-rail{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line);border-radius:20px;overflow:hidden}.hcs-v10-benefit-rail article{min-height:220px;padding:24px;border-right:1px solid var(--line);background:#fff}.hcs-v10-benefit-rail article:last-child{border-right:0}.hcs-v10-benefit-rail span{color:#43938e;font-size:10px;font-weight:800}.hcs-v10-benefit-rail strong{display:block;margin:34px 0 9px;font-size:17px}.hcs-v10-benefit-rail p{font-size:13px;line-height:1.58}
+.hcs-v10-audience .center{margin-bottom:30px!important}
+.hcs-v10-screens{padding:0 0 96px;background:linear-gradient(180deg,#eef5f5,#fff)}
+.hcs-v10-screen-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.hcs-v10-screen-grid>div{overflow:hidden;border:1px solid var(--line);border-radius:24px;background:#fff;box-shadow:0 22px 58px rgba(6,51,74,.09)}.hcs-v10-screen-grid img{width:100%;height:440px;object-fit:contain;background:#f8fbfb}
+.hcs-v10-means .means{grid-template-columns:repeat(3,1fr)!important}
+@media(max-width:1080px){.hcs-v10-hero-grid,.hcs-v10-intro-grid,.hcs-v10-heading,.hcs-v10-scroll{grid-template-columns:1fr}.hcs-v10-hero-stage{min-height:580px}.hcs-v10-sticky{position:relative;top:auto}.hcs-v10-steps{grid-template-columns:1fr 1fr}.hcs-v10-step{min-height:280px;padding:30px 20px}.hcs-v10-benefit-rail{grid-template-columns:1fr 1fr}.hcs-v10-benefit-rail article{border-bottom:1px solid var(--line)}}
+@media(max-width:700px){.hcs-v10-hero-stage{min-height:480px}.hcs-v10-main-screen{width:100%}.hcs-v10-main-screen>img{height:360px}.hcs-v10-chat{width:72%;bottom:-10px}.hcs-v10-chat img{height:180px!important}.hcs-v10-steps,.hcs-v10-benefit-rail,.hcs-v10-screen-grid,.hcs-v10-means .means{grid-template-columns:1fr!important}.hcs-v10-screen-grid img{height:auto}}
