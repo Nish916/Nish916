@@ -2630,3 +2630,190 @@ header .btn.primary,
 }
 @media(max-width:760px){.v9-hero-copy h1{font-size:46px}.v9-human-frame{position:relative;width:100%;height:480px}.v9-ui-frame{left:10px;width:82%;bottom:28px}.v9-label-top{right:8px}.v9-label-bottom{right:15px}.v9-value-track{grid-template-columns:1fr 1fr}.v9-value-track>div:nth-child(2){border-right:0}.v9-value-track>div:nth-child(-n+2){border-bottom:1px solid var(--line)}.v9-solution-row{grid-template-columns:40px 1fr 30px;gap:16px}.v9-solution-row>p{grid-column:2/4}.v9-hcs-steps{grid-template-columns:1fr}.v9-rcm-line,.v9-outcome-grid,.v9-resource-track{grid-template-columns:1fr}.v9-outcome-grid article{border-right:0!important;border-bottom:1px solid rgba(255,255,255,.12)}.v9-outcome-grid article:last-child{border-bottom:0}.v9-outcome-label{grid-template-columns:1fr}.v9-resource-head{grid-template-columns:1fr}}
 @media(max-width:560px){.v9-hero{padding-top:50px}.v9-hero-copy h1{font-size:39px}.v9-hero-copy>p{font-size:16px}.v9-hero-composition{min-height:470px}.v9-human-frame{height:430px}.v9-ui-frame{width:90%;bottom:24px}.v9-ui-frame>img{height:220px}.v9-hero-label{display:none}.v9-value-track{grid-template-columns:1fr}.v9-value-track>div{border-right:0;border-bottom:1px solid var(--line)!important}.v9-heading h2,.v9-role-intro h2,.v9-doc-grid h2,.v9-resource-head h2,.v9-final h2{font-size:34px}.v9-role-panels{padding:24px}.v9-role-panel h3{font-size:27px}.v9-hcs-windowbar{grid-template-columns:1fr auto}.v9-hcs-windowbar a{display:none}}
+
+
+/* ===== V10 full-site system — advanced healthcare product UX ===== */
+body{background:#fff}
+body:not([data-page-type="homepage"]) main{overflow:hidden}
+body:not([data-page-type="homepage"]) .pagehero,
+body:not([data-page-type="homepage"]) .detail-hero,
+body:not([data-page-type="homepage"]) .persona-hero,
+body:not([data-page-type="homepage"]) .rcm-hero,
+body:not([data-page-type="homepage"]) .hcs-hero,
+body:not([data-page-type="homepage"]) .resource-hero,
+body:not([data-page-type="homepage"]) .v2-hero{
+  position:relative!important;
+  overflow:hidden!important;
+  padding:88px 0 92px!important;
+  background:
+    radial-gradient(circle at 80% 16%,rgba(92,185,178,.17),transparent 28%),
+    radial-gradient(circle at 12% 88%,rgba(54,94,157,.16),transparent 29%),
+    linear-gradient(135deg,#031c2a,#06354b 58%,#0a4a61)!important;
+}
+body:not([data-page-type="homepage"]) .pagehero:after,
+body:not([data-page-type="homepage"]) .detail-hero:after,
+body:not([data-page-type="homepage"]) .persona-hero:after,
+body:not([data-page-type="homepage"]) .rcm-hero:after,
+body:not([data-page-type="homepage"]) .hcs-hero:after,
+body:not([data-page-type="homepage"]) .resource-hero:after,
+body:not([data-page-type="homepage"]) .v2-hero:after{
+  content:"";position:absolute;inset:0;opacity:.15;
+  background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:56px 56px;mask-image:linear-gradient(to bottom,#000,transparent 96%);pointer-events:none
+}
+body:not([data-page-type="homepage"]) .pagehero-grid,
+body:not([data-page-type="homepage"]) .detail-grid,
+body:not([data-page-type="homepage"]) .persona-grid,
+body:not([data-page-type="homepage"]) .rcm-hero-grid,
+body:not([data-page-type="homepage"]) .hcs-grid,
+body:not([data-page-type="homepage"]) .resource-hero-grid,
+body:not([data-page-type="homepage"]) .v2-grid{position:relative;z-index:2;gap:68px!important}
+body:not([data-page-type="homepage"]) .pagehero h1,
+body:not([data-page-type="homepage"]) .detail-hero h1,
+body:not([data-page-type="homepage"]) .persona-hero h1,
+body:not([data-page-type="homepage"]) .rcm-hero h1,
+body:not([data-page-type="homepage"]) .hcs-hero h1,
+body:not([data-page-type="homepage"]) .resource-hero h1,
+body:not([data-page-type="homepage"]) .v2-hero h1{color:#fff!important;font-size:58px!important;line-height:1.01!important;letter-spacing:-.052em!important;text-wrap:balance}
+body:not([data-page-type="homepage"]) .pagehero p,
+body:not([data-page-type="homepage"]) .detail-hero p,
+body:not([data-page-type="homepage"]) .persona-hero p,
+body:not([data-page-type="homepage"]) .rcm-hero p,
+body:not([data-page-type="homepage"]) .hcs-hero p,
+body:not([data-page-type="homepage"]) .resource-hero p,
+body:not([data-page-type="homepage"]) .v2-hero p{color:#bfd0d6!important;line-height:1.72!important}
+body:not([data-page-type="homepage"]) .pagehero .eyebrow,
+body:not([data-page-type="homepage"]) .detail-hero .eyebrow,
+body:not([data-page-type="homepage"]) .persona-hero .eyebrow,
+body:not([data-page-type="homepage"]) .rcm-hero .eyebrow,
+body:not([data-page-type="homepage"]) .hcs-hero .eyebrow,
+body:not([data-page-type="homepage"]) .resource-hero .eyebrow,
+body:not([data-page-type="homepage"]) .v2-hero .eyebrow{color:#88d6cf!important}
+body:not([data-page-type="homepage"]) .pagehero img,
+body:not([data-page-type="homepage"]) .detail-hero img,
+body:not([data-page-type="homepage"]) .persona-hero img,
+body:not([data-page-type="homepage"]) .rcm-hero img,
+body:not([data-page-type="homepage"]) .hcs-hero img,
+body:not([data-page-type="homepage"]) .resource-hero img,
+body:not([data-page-type="homepage"]) .v2-hero img{
+  border:1px solid rgba(255,255,255,.13)!important;border-radius:28px!important;background:rgba(255,255,255,.06)!important;padding:9px!important;
+  box-shadow:0 38px 90px rgba(0,0,0,.27)!important
+}
+
+/* editorial section hierarchy */
+body:not([data-page-type="homepage"]) .section{padding:94px 0!important}
+body:not([data-page-type="homepage"]) .section>.wrap>.center{max-width:880px;margin-left:0;text-align:left}
+body:not([data-page-type="homepage"]) .section>.wrap>.center h2{font-size:45px;line-height:1.04}
+body:not([data-page-type="homepage"]) .section>.wrap>.center .hero-actions{justify-content:flex-start!important}
+body:not([data-page-type="homepage"]) .section.mist{background:linear-gradient(180deg,#f5f9f9,#eef5f5)!important}
+body:not([data-page-type="homepage"]) .section.dark{background:radial-gradient(circle at 82% 12%,rgba(92,185,178,.14),transparent 28%),linear-gradient(145deg,#031c2a,#073c51)!important}
+
+/* advanced cards/rows */
+body:not([data-page-type="homepage"]) .option-grid,
+body:not([data-page-type="homepage"]) .feature-grid,
+body:not([data-page-type="homepage"]) .benefits,
+body:not([data-page-type="homepage"]) .service-grid,
+body:not([data-page-type="homepage"]) .resource-grid{
+  gap:14px!important
+}
+body:not([data-page-type="homepage"]) .option,
+body:not([data-page-type="homepage"]) .feature,
+body:not([data-page-type="homepage"]) .benefit,
+body:not([data-page-type="homepage"]) .service,
+body:not([data-page-type="homepage"]) .resource{
+  min-height:250px;border:1px solid rgba(6,51,74,.09)!important;border-radius:22px!important;background:linear-gradient(180deg,#fff,#fbfdfd)!important;
+  box-shadow:0 12px 34px rgba(6,51,74,.045)!important;padding:28px!important
+}
+body:not([data-page-type="homepage"]) .option:hover,
+body:not([data-page-type="homepage"]) .feature:hover,
+body:not([data-page-type="homepage"]) .benefit:hover,
+body:not([data-page-type="homepage"]) .service:hover,
+body:not([data-page-type="homepage"]) .resource:hover{transform:translateY(-4px);box-shadow:0 28px 60px rgba(6,51,74,.09)!important;border-color:rgba(61,155,149,.26)!important}
+body:not([data-page-type="homepage"]) .option h3,
+body:not([data-page-type="homepage"]) .feature h3,
+body:not([data-page-type="homepage"]) .benefit h3,
+body:not([data-page-type="homepage"]) .service h3,
+body:not([data-page-type="homepage"]) .resource h3{font-size:24px!important;line-height:1.1}
+
+/* process rails */
+body:not([data-page-type="homepage"]) .flow,
+body:not([data-page-type="homepage"]) .path-grid,
+body:not([data-page-type="homepage"]) .timeline,
+body:not([data-page-type="homepage"]) .journey{
+  position:relative;gap:0!important;border:1px solid rgba(6,51,74,.09);border-radius:20px;overflow:hidden;background:#fff
+}
+body:not([data-page-type="homepage"]) .flow-step,
+body:not([data-page-type="homepage"]) .path,
+body:not([data-page-type="homepage"]) .step,
+body:not([data-page-type="homepage"]) .journey-card{
+  min-height:220px;border:0!important;border-right:1px solid var(--line)!important;border-radius:0!important;padding:26px!important;background:#fff!important;box-shadow:none!important
+}
+body:not([data-page-type="homepage"]) .flow-step:last-child,
+body:not([data-page-type="homepage"]) .path:last-child,
+body:not([data-page-type="homepage"]) .step:last-child,
+body:not([data-page-type="homepage"]) .journey-card:last-child{border-right:0!important}
+
+/* integration/security/content lists */
+body:not([data-page-type="homepage"]) .integration-grid{gap:14px!important}
+body:not([data-page-type="homepage"]) .integration{border-radius:22px!important;padding:30px!important;box-shadow:0 10px 30px rgba(6,51,74,.045)!important}
+body:not([data-page-type="homepage"]) .security-item{padding:16px 0 16px 20px!important;border-left:2px solid var(--teal)!important}
+body:not([data-page-type="homepage"]) .checks{gap:10px}
+body:not([data-page-type="homepage"]) .check{padding:10px 0}
+
+/* persona pages */
+body[data-page-type="persona"] .route-grid{grid-template-columns:repeat(4,1fr)!important;gap:12px!important}
+body[data-page-type="persona"] .route{min-height:265px!important}
+body[data-page-type="persona"] .product-frame{border-radius:24px!important;overflow:hidden}
+body[data-page-type="persona"] .product-frame img{width:100%;height:auto}
+
+/* resource hub */
+body[data-page-type="resource"] .resource-hero{padding-bottom:76px!important}
+body[data-page-type="resource"] .filterbar{padding:8px!important;border:1px solid var(--line);border-radius:18px;background:#f7fafa}
+body[data-page-type="resource"] .filterbar button{border-radius:12px!important;min-height:42px}
+body[data-page-type="resource"] .resource-grid{grid-template-columns:repeat(3,1fr)!important}
+body[data-page-type="resource"] .resource{min-height:300px!important}
+
+/* HCS current page */
+body[data-product="HIM Companion Suite"] .modules{grid-template-columns:repeat(5,1fr)!important;gap:10px!important}
+body[data-product="HIM Companion Suite"] .module-card{min-height:330px!important;border-radius:20px!important;background:#fff!important;padding:24px!important}
+body[data-product="HIM Companion Suite"] .module-card h3{font-size:22px!important}
+body[data-product="HIM Companion Suite"] .why-grid2{border:1px solid var(--line)!important;border-radius:20px!important;overflow:hidden}
+body[data-product="HIM Companion Suite"] .why2{min-height:190px!important;padding:24px!important;background:#fff!important}
+body[data-product="HIM Companion Suite"] .screens{gap:14px!important}
+body[data-product="HIM Companion Suite"] .screens img{height:450px!important;border-radius:22px!important;box-shadow:0 20px 54px rgba(6,51,74,.10)!important}
+
+/* RCM proof grid */
+body[data-solution="Revenue Cycle Management"] .outcomes{border:1px solid var(--line);border-radius:20px;overflow:hidden;gap:0!important}
+body[data-solution="Revenue Cycle Management"] .outcome{min-height:170px;border:0!important;border-right:1px solid var(--line)!important;border-radius:0!important;box-shadow:none!important}
+body[data-solution="Revenue Cycle Management"] .outcome:last-child{border-right:0!important}
+body[data-solution="Revenue Cycle Management"] .outcome strong{font-size:31px!important}
+
+/* detail/product pages */
+body[data-page-type="product"] .feature-grid,
+body[data-page-type="solution"] .feature-grid{gap:14px!important}
+body .detail-grid img{min-height:420px;object-fit:cover!important}
+body[data-product="InstaNote"] .detail-grid img,
+body[data-product="eScription One"] .detail-grid img{object-fit:contain!important;background:#f8fbfb!important}
+
+/* CTA */
+body:not([data-page-type="homepage"]) .cta{padding:78px 0!important;background:radial-gradient(circle at 84% 18%,rgba(92,185,178,.15),transparent 28%),linear-gradient(120deg,#032032,#07465d)!important}
+body:not([data-page-type="homepage"]) .cta h2{max-width:850px;color:#fff!important;font-size:44px!important}
+body:not([data-page-type="homepage"]) .cta p{max-width:790px;color:#c4d5da!important}
+
+/* mobile */
+@media(max-width:1080px){
+  body[data-product="HIM Companion Suite"] .modules{grid-template-columns:repeat(2,1fr)!important}
+  body[data-page-type="persona"] .route-grid{grid-template-columns:1fr 1fr!important}
+}
+@media(max-width:980px){
+  body:not([data-page-type="homepage"]) .pagehero h1,body:not([data-page-type="homepage"]) .detail-hero h1,body:not([data-page-type="homepage"]) .persona-hero h1,body:not([data-page-type="homepage"]) .rcm-hero h1,body:not([data-page-type="homepage"]) .hcs-hero h1,body:not([data-page-type="homepage"]) .resource-hero h1,body:not([data-page-type="homepage"]) .v2-hero h1{font-size:46px!important}
+  body:not([data-page-type="homepage"]) .flow,body:not([data-page-type="homepage"]) .path-grid,body:not([data-page-type="homepage"]) .timeline,body:not([data-page-type="homepage"]) .journey{display:grid;grid-template-columns:1fr 1fr!important}
+  body:not([data-page-type="homepage"]) .flow-step,body:not([data-page-type="homepage"]) .path,body:not([data-page-type="homepage"]) .step,body:not([data-page-type="homepage"]) .journey-card{border-right:1px solid var(--line)!important;border-bottom:1px solid var(--line)!important}
+  body[data-page-type="resource"] .resource-grid{grid-template-columns:1fr 1fr!important}
+}
+@media(max-width:640px){
+  body:not([data-page-type="homepage"]) .section{padding:64px 0!important}
+  body:not([data-page-type="homepage"]) .pagehero h1,body:not([data-page-type="homepage"]) .detail-hero h1,body:not([data-page-type="homepage"]) .persona-hero h1,body:not([data-page-type="homepage"]) .rcm-hero h1,body:not([data-page-type="homepage"]) .hcs-hero h1,body:not([data-page-type="homepage"]) .resource-hero h1,body:not([data-page-type="homepage"]) .v2-hero h1{font-size:38px!important}
+  body:not([data-page-type="homepage"]) .flow,body:not([data-page-type="homepage"]) .path-grid,body:not([data-page-type="homepage"]) .timeline,body:not([data-page-type="homepage"]) .journey,
+  body[data-page-type="persona"] .route-grid,body[data-page-type="resource"] .resource-grid,body[data-product="HIM Companion Suite"] .modules{grid-template-columns:1fr!important}
+}
