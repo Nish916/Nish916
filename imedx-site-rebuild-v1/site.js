@@ -226,6 +226,38 @@
     }
   }
 
+  // HCS product-page scrollytelling.
+  const hcsPageSteps = [...document.querySelectorAll("[data-hcs-page-step]")];
+  const hcsPageImage = document.getElementById("hcs-page-screen-image");
+  const hcsPageTitle = document.getElementById("hcs-page-screen-title");
+  const hcsPageCount = document.getElementById("hcs-page-count");
+  const hcsPageProgress = document.getElementById("hcs-page-progress");
+  if (hcsPageSteps.length && hcsPageImage && hcsPageTitle) {
+    const setHcsPageStep = (step) => {
+      const index = Number(step.dataset.index || 0);
+      hcsPageSteps.forEach((s) => s.classList.toggle("is-active", s === step));
+      hcsPageImage.classList.add("is-changing");
+      window.setTimeout(() => {
+        hcsPageImage.src = step.dataset.image || hcsPageImage.src;
+        hcsPageImage.alt = step.dataset.alt || hcsPageImage.alt;
+        hcsPageTitle.textContent = step.dataset.title || "";
+        if (hcsPageCount) hcsPageCount.textContent = String(index + 1).padStart(2, "0") + " / " + String(hcsPageSteps.length).padStart(2, "0");
+        if (hcsPageProgress) hcsPageProgress.style.width = (((index + 1) / hcsPageSteps.length) * 100) + "%";
+        hcsPageImage.classList.remove("is-changing");
+      }, 110);
+      push("hcs_page_module_view", { module_name: step.dataset.title || "", module_index: index + 1 });
+    };
+    if ("IntersectionObserver" in window && !window.matchMedia("(max-width: 1080px)").matches) {
+      const observer = new IntersectionObserver((entries) => {
+        const visible = entries.filter((entry) => entry.isIntersecting).sort((a,b) => b.intersectionRatio-a.intersectionRatio)[0];
+        if (visible) setHcsPageStep(visible.target);
+      }, { threshold:[0.35,0.55,0.7], rootMargin:"-18% 0px -34% 0px" });
+      hcsPageSteps.forEach((step) => observer.observe(step));
+    } else {
+      hcsPageSteps.forEach((step) => step.addEventListener("click", () => setHcsPageStep(step)));
+    }
+  }
+
   // Homepage role switcher.
   document.querySelectorAll("[data-role-switcher]").forEach((switcher) => {
     const tabs = [...switcher.querySelectorAll("[data-role-tab]")];
