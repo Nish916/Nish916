@@ -2996,3 +2996,10 @@ body[data-page-type="404"] h1{color:#fff!important;font-size:64px!important;line
 body[data-page-type="404"] .lead{color:#bfd0d5!important}
 body[data-page-type="404"] .eyebrow{color:#8bd5cf!important}
 body[data-page-type="404"] .hero-actions{justify-content:flex-start!important}
+
+
+/* ===== Error V10 ===== */
+.error-v10{position:relative;min-height:100vh;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 78% 18%,rgba(92,185,178,.18),transparent 28%),linear-gradient(145deg,#031c2a,#073c51)}
+.error-v10-grid{position:absolute;inset:0;opacity:.14;background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:56px 56px}
+.error-v10-inner{position:relative;z-index:2;max-width:760px;text-align:center;padding:80px 0}.error-v10-code{color:rgba(255,255,255,.08);font-size:190px;line-height:.8;font-weight:800;letter-spacing:-.07em}.error-v10 .eyebrow{margin-top:-18px;color:#86d4ce}.error-v10 .eyebrow:before{background:#86d4ce}.error-v10 h1{margin:10px auto 18px;color:#fff;font-size:54px}.error-v10 .lead{margin:0 auto;color:#bfd0d5}.error-v10 .hero-actions{justify-content:center}.error-v10 .btn.ghost{color:#fff}
+@media(max-width:640px){.error-v10-code{font-size:120px}.error-v10 h1{font-size:38px}}
